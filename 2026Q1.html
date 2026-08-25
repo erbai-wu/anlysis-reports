@@ -149,8 +149,15 @@ chart('segment-chart',{animation:false,tooltip:{trigger:'axis',axisPointer:{type
 chart('cost-chart',{animation:false,tooltip:{trigger:'axis',axisPointer:{type:'shadow'}},grid:{left:110,right:35,top:20,bottom:34},xAxis:{type:'value',axisLabel:{...baseText,formatter:'{value}%'},splitLine:{lineStyle:{color:palette.grid}}},yAxis:{type:'category',data:chartData.cost.labels,axisLabel:baseText,axisLine:{show:false},axisTick:{show:false}},series:[{type:'bar',data:chartData.cost.values.map(v=>({value:v,itemStyle:{color:v>=0?palette.red:palette.green,borderRadius:v>=0?[0,5,5,0]:[5,0,0,5]},label:{show:true,position:v>=0?'right':'left',formatter:(v>0?'+':'')+v+'%',color:palette.ink}})),barWidth:18}]});
 window.addEventListener('resize',()=>charts.forEach(c=>c.resize()),{passive:true});
 charts.forEach(c=>c.resize());
-window.REPORT_READY=charts.length===4&&[...document.querySelectorAll('canvas')].every(c=>c.width>0&&c.height>0);
-document.documentElement.dataset.reportReady=window.REPORT_READY?'true':'false';
+function updateReportReady(){
+  const canvases=[...document.querySelectorAll('canvas')];
+  window.REPORT_READY=charts.length===4&&canvases.length===4&&canvases.every(c=>c.width>0&&c.height>0);
+  document.documentElement.dataset.reportReady=window.REPORT_READY?'true':'false';
+  return window.REPORT_READY;
+}
+updateReportReady();
+requestAnimationFrame(()=>requestAnimationFrame(updateReportReady));
+window.addEventListener('load',updateReportReady,{once:true});
 
 const publicLink=document.getElementById('public-link');
 if(/^https?:/.test(location.protocol)){publicLink.href=location.href;publicLink.textContent=location.href;}
