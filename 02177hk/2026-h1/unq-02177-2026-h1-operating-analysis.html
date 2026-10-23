@@ -87,34 +87,34 @@ body>.reference-summary{width:min(1280px,calc(100% - 64px))!important;}
 @media print{#cash{break-before:page}#cash .cash-block{break-inside:auto;margin-top:5mm;padding:14px}#cash .cash-table{min-width:0;font-size:10px;line-height:1.5}#cash .cash-table th,#cash .cash-table td{padding:7px;overflow-wrap:break-word}#cash tr{break-inside:avoid}#cash thead{display:table-header-group}#cash .cash-block h3,#cash .cash-block h4{break-after:avoid-page}#cash .cash-block>p{font-size:11px}#cash .callout{break-inside:avoid}#cash .cash-formula{font-size:12px;break-inside:avoid}#cash .cash-block h4{margin-top:14px}#cash .cash-loop{font-size:10px}#cash .cash-intro{break-inside:avoid}.cash-method-note p{font-size:11px}}
 
 @media print{#cash .cash-intro{grid-template-columns:1.16fr .84fr!important;gap:16px!important}#cash .cash-block{break-inside:avoid-page}#strategy{break-before:page}#strategy .strategy-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px}#strategy .strategy{padding:14px;break-inside:avoid}#strategy .strategy h3{font-size:15px}#strategy .strategy dt{font-size:9px;margin-top:8px}#strategy .strategy dd{font-size:11px;line-height:1.55}#strategy .priority{font-size:11px;padding:14px}#risks{break-inside:avoid-page}#risks .validation-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}#risks .validation{padding:12px}#risks .validation p{font-size:11px;line-height:1.6}#risks .validation h4{font-size:12px}}
-</style><meta content="20261023-echarts-story" name="report-revision"/>
+</style><meta content="20261023-layout-unify" name="report-revision"/>
 <style id="cash-echarts-story-style">
-#cash .cash-visual-grid{display:grid;grid-template-columns:1.65fr 1fr;gap:24px;align-items:start;margin-top:20px}
-#cash .cash-figure{margin:0;min-width:0;break-inside:avoid}
-#cash .cash-figure h4{margin:0 0 12px}
-#cash #chart-capital-balances,#cash #chart-receivables-days,#cash #chart-profit-cash,#cash #chart-cash{min-height:0}
-#cash .cash-figure figcaption{font-size:12px;line-height:1.65;color:#66737b;margin:8px 0 14px}
-#cash #chart-capital-balances{height:330px}
+#cash .cash-row{padding:0}
+#cash .cash-row>.panel,#cash .cash-row .grid-2>.panel{min-width:0}
+#cash .cash-row .chart{min-height:0}
+#cash #chart-cash,#cash #chart-profit-cash{height:390px;min-height:0}
+#cash #chart-capital-balances{height:340px}
 #cash #chart-receivables-days{height:210px}
-#cash #chart-profit-cash{height:350px}
-#cash #chart-cash{height:410px}
-#cash .chart-takeaway{display:flex;flex-direction:column;gap:4px;margin:8px 0 10px;color:#172026}
-#cash .chart-takeaway strong{font-size:22px}#cash .chart-takeaway span{font-size:14px;color:#dc5f45}
-#cash .cash-interpretation{line-height:1.8;margin:14px 0}
-#segments .panel>p{line-height:1.85;margin:0 0 18px}
-@media(max-width:700px){#cash .cash-visual-grid{grid-template-columns:1fr;gap:20px}#cash #chart-capital-balances{height:340px}#cash #chart-cash{height:410px}#cash #chart-profit-cash{height:350px}#cash .cash-dso-figure{border-top:1px solid #e7ece9;padding-top:18px}}
+#cash .cash-risk-callout{margin-top:24px}
+@media(max-width:620px){
+ #cash #chart-capital-balances{height:310px}
+ #cash #chart-cash{height:390px}
+ #cash #chart-profit-cash{height:350px}
+}
 @media print{
  #cash .cash-intro{display:block!important;break-inside:auto!important}
- #cash .cash-intro>.panel{break-inside:avoid;margin-bottom:5mm}
- #cash .cash-block{break-inside:avoid-page!important}
- #cash .cash-block>p{break-inside:avoid;orphans:3;widows:3}
- #cash .cash-figure{break-inside:avoid!important;page-break-inside:avoid}
- #cash .cash-visual-grid{grid-template-columns:1.6fr 1fr!important;gap:16px;break-inside:avoid}
- #cash #chart-capital-balances{height:290px}#cash #chart-receivables-days{height:190px}
- #cash #chart-cash{height:340px}#cash #chart-profit-cash{height:310px}
- #cash .cash-figure figcaption{font-size:10px;margin-bottom:8px}
- #cash .cash-interpretation,#segments .panel>p{font-size:11px;line-height:1.65}
- #cash .cash-dso-figure{border:0;padding:0}#cash .chart-takeaway strong{font-size:19px}
+ #cash .cash-intro>.panel{margin-bottom:5mm}
+ #cash .cash-row{padding:0;break-inside:avoid-page!important}
+ #cash .cash-row .panel>p{font-size:11px}
+ #cash .cash-row .panel>.source-note,#cash .cash-row>.source-note{font-size:9px}
+ #cash #cash-occupation>.grid-2{grid-template-columns:1.16fr .84fr!important;gap:16px}
+ #cash #cash-profit-bridge{grid-template-columns:1.16fr .84fr!important;gap:16px}
+ #cash #chart-cash{height:340px}
+ #cash #chart-capital-balances{height:290px}
+ #cash #chart-receivables-days{height:170px}
+ #cash #chart-profit-cash{height:310px}
+ #cash .cash-risk-callout{margin-top:5mm;break-inside:avoid}
+ #cash .cash-row p{orphans:3;widows:3}
 }
 </style></head>
 <body>
@@ -162,35 +162,16 @@ body>.reference-summary{width:min(1280px,calc(100% - 64px))!important;}
 <div class="reading" data-evidence="calculation"><strong>现金少了，借款也少了</strong><span>现金比年初少6,244万元，借款余额也少7,655万元。公司用了部分过去存下的钱买公司、还债，不能只看现金下降就判断经营变差。</span></div>
 <div class="reading" data-evidence="fact"><strong>还有一部分钱不能自由使用</strong><span>另有5,350万元受限现金，使用要满足限制条件。财报还披露4,750万元存款为上海旭一贷款担保，需跟踪担保解除。</span></div>
 </div><div class="callout"><strong>接下来最该盯什么：</strong> 客户欠款有没有真正到账，减少的库存会不会又补回来，以及收购、还债之后还剩多少可安排的现金。</div></div></div>
-<div class="panel cash-block" id="cash-occupation"><h3>一 · 应收周转延长2.8天，回款效率需要单独跟踪</h3>
-<p><strong>贸易应收款周转天数由2025年末29.3天升至2026年6月末32.1天，延长2.8天。</strong> 应收环节的资金占用时间拉长。公司称主要受京东渠道回款周期延长影响，相关款项大部分已在中报发布前收回；期后收回缓解了收款风险，但不计入上半年现金。6月末存货净额2.23亿元、应收净额2.28亿元，合计约4.51亿元。</p>
-<div class="cash-visual-grid">
-<figure class="cash-figure"><h4>库存减少，销售应收增加</h4><div aria-label="2025年末与2026年6月末存货净额、销售应收原值及其他应收原值对比，单位百万元" class="chart cash-balance-chart" id="chart-capital-balances" role="img"></div><figcaption>存货按净额，应收按减值前原值列示；各项单独比较，不叠加为现金贡献。</figcaption></figure>
-<figure class="cash-figure cash-dso-figure"><h4>贸易应收周转延长2.8天</h4><div aria-label="集团贸易应收周转天数，2025年末29.3天，2026年6月末32.1天，增加2.8天" class="chart cash-dso-chart" id="chart-receivables-days" role="img"></div><figcaption>公司称主要受京东渠道回款周期延长影响；相关款项多数期后收回。</figcaption></figure>
-</div>
-<p class="cash-interpretation"><strong>回款与库存要分开看。</strong> 存货净额减少6,713万元，销售应收原值增加6,663万元；其他应收原值减少3,403万元。销售应收较年初增长49.0%，较去年6月末约增5.9%，需结合相同季节和实际到账判断回款效率。其他应收还包括返利、保证金和应收股利，其减少不能全部视为销售回款。</p>
-<p class="source-note cash-detail-line">应收净额＝销售应收原值＋其他应收原值−减值准备。减值准备由54.288增至58.237，应收净额由199.088增至227.735（百万元）；准备增加属于会计估计，不代表客户已经付款。</p>
-<p class="source-note">其他流动资产101.827→92.387，应付款125.901→118.674，合同负债1.943→4.075（百万元）。资产减应付与预收的分析合计由463.362降至420.536，少42.826百万元；余额变化含并表、汇率及减值等影响，不等于现金回收额。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=25" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 25–26 页</a>、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=46" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 46 页</a>。</p>
-
-
-<p class="source-note">应收周转、京东回款及应收余额来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=15" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 15–16 页</a>、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=40" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 40–42 页</a>。</p>
-<div class="callout" data-plain-conclusion="true"><strong>上海旭一的欠款仍要追，担保也要盯。</strong> 其应收款仍有5,248万元，已提坏账准备4,980万元，账面净额只剩约268万元。这表示大部分欠款已按可能收不回处理，不表示对方已还钱。公司另有4,750万元存款为其贷款担保，要同时核对实际还款和担保何时解除。</div>
-<p class="source-note">另有5,350万元受限现金，不能随时用于进货、投放或还债；受限现金与担保存款按各自披露列示，不重复相加。设备、租赁资产使用权及无形资产合计5,479万元，增加主要因为收购带入这些资产；本期现金购建仅23.9万元，不能把资产增长全当成新投入。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=25" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 25、28、46、49 页</a>。收购资产估值尚未完成，预计Q4确认。</p></div>
-<div class="panel cash-block" id="cash-profit-bridge"><h3>二 · 集团净利润2,261万元，为什么经营现金流有6,743万元？</h3>
-<p>利润按本期收入和成本计算；现金流看钱什么时候收到、什么时候付出。收回以前的欠款、减少备货，都可能让现金流高于利润。本期经营现金净流入约为净利润的3倍，公司称去库存和收回垫款帮助了改善，所以不能把6,743万元全当成本期新赚的钱。</p>
-<figure class="cash-figure"><div aria-label="2026年上半年合并净利润到经营现金六步勾稽瀑布，单位百万元，其他调整差额为分析测算" class="chart cash-profit-chart" id="chart-profit-cash" role="img"></div><figcaption>灰色虚线项是按财报小计倒算的差额测算，不代表已证实的某一项经营现金贡献。</figcaption></figure>
-<p class="cash-interpretation">从合并净利润2,261万元出发，已识别的税费、折旧、减值及财务等调整净增加722万元，再计入差额测算、实际收息和缴税，得到经营现金净流入6,743万元。<strong>差额测算4,021.4万元仅用于勾稽，不分配到库存、应收或应付。</strong> 逐项计算见<a href="#cash-method-note">计算口径</a>。</p>
-<p class="source-note">来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=23" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 23 页</a>（利润表）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=36" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 36–37 页</a>（折旧、融资费用及税费）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=39" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 39、42 页</a>（存货及应收减值）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=47" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 47 页</a>（收购收益）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=28" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 28 页</a>（现金流）。净利润与归母净利润相差 0.096，为少数股东损益。</p>
-<div class="callout"><strong>现金改善的经营含义：</strong> 经营现金净流入比净利润多4,482万元。公司披露去库存、收回垫款帮助了现金改善；后续重点看重新备货和客户回款后的现金表现。</div>
-<p class="source-note">图示采用合并利润口径。经营现金净流入÷合并净利润＝67.426÷22.605＝2.98倍。公司把付息列在筹资活动；若也扣掉这笔利息，经营现金剩6,424万元。其他公司分类可能不同，比较前须统一。计算口径见<a href="#cash-method-note">附注</a>；基金汇率变化依据：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=33" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 33–34 页</a>。</p></div>
-<div class="panel cash-block" id="cash-sources-uses"><h3>三 · 收购和还债超过本期经营现金，差额用了过去存下的钱</h3>
+<div class="cash-block cash-row" id="cash-occupation"><div class="grid-2"><div class="panel"><h3>库存减少，销售应收增加</h3><div aria-label="2025年末与2026年6月末存货净额、销售应收原值及其他应收原值对比，单位百万元" class="chart cash-balance-chart" id="chart-capital-balances" role="img"></div><p class="source-note">存货按净额，应收按减值前原值列示；各项单独比较，不叠加为现金贡献。</p><p class="cash-interpretation"><strong>回款与库存要分开看。</strong> 存货净额减少6,713万元，销售应收原值增加6,663万元；其他应收原值减少3,403万元。销售应收较年初增长49.0%，较去年6月末约增5.9%，需结合相同季节和实际到账判断回款效率。其他应收还包括返利、保证金和应收股利，其减少不能全部视为销售回款。</p><p class="source-note cash-detail-line">应收净额＝销售应收原值＋其他应收原值−减值准备。减值准备由54.288增至58.237，应收净额由199.088增至227.735（百万元）；准备增加属于会计估计，不代表客户已经付款。</p><p class="source-note">其他流动资产101.827→92.387，应付款125.901→118.674，合同负债1.943→4.075（百万元）。资产减应付与预收的分析合计由463.362降至420.536，少42.826百万元；余额变化含并表、汇率及减值等影响，不等于现金回收额。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=25" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 25–26 页</a>、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=46" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 46 页</a>。</p></div><div class="panel"><h3>应收周转延长2.8天，回款效率需要跟踪</h3><div aria-label="集团贸易应收周转天数，2025年末29.3天，2026年6月末32.1天，增加2.8天" class="chart cash-dso-chart" id="chart-receivables-days" role="img"></div><p class="source-note">公司称主要受京东渠道回款周期延长影响；相关款项多数期后收回。</p><p><strong>贸易应收款周转天数由2025年末29.3天升至2026年6月末32.1天，延长2.8天。</strong> 应收环节的资金占用时间拉长。公司称主要受京东渠道回款周期延长影响，相关款项大部分已在中报发布前收回；期后收回缓解了收款风险，但不计入上半年现金。6月末存货净额2.23亿元、应收净额2.28亿元，合计约4.51亿元。</p><p class="source-note">应收周转、京东回款及应收余额来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=15" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 15–16 页</a>、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=40" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 40–42 页</a>。</p></div></div><div class="callout cash-risk-callout" data-plain-conclusion="true"><strong>上海旭一的欠款仍要追，担保也要盯。</strong> 其应收款仍有5,248万元，已提坏账准备4,980万元，账面净额只剩约268万元。这表示大部分欠款已按可能收不回处理，不表示对方已还钱。公司另有4,750万元存款为其贷款担保，要同时核对实际还款和担保何时解除。</div><p class="source-note">另有5,350万元受限现金，不能随时用于进货、投放或还债；受限现金与担保存款按各自披露列示，不重复相加。设备、租赁资产使用权及无形资产合计5,479万元，增加主要因为收购带入这些资产；本期现金购建仅23.9万元，不能把资产增长全当成新投入。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=25" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 25、28、46、49 页</a>。收购资产估值尚未完成，预计Q4确认。</p></div>
+<div class="grid-2 cash-block cash-row" id="cash-profit-bridge"><div class="panel"><h3>净利润到经营现金的六步变化</h3><div aria-label="2026年上半年合并净利润到经营现金六步勾稽瀑布，单位百万元，其他调整差额为分析测算" class="chart cash-profit-chart" id="chart-profit-cash" role="img"></div><p class="source-note">灰色虚线项是按财报小计倒算的差额测算，不代表已证实的某一项经营现金贡献。</p><p class="source-note">来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=23" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 23 页</a>（利润表）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=36" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 36–37 页</a>（折旧、融资费用及税费）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=39" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 39、42 页</a>（存货及应收减值）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=47" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 47 页</a>（收购收益）、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=28" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 28 页</a>（现金流）。净利润与归母净利润相差 0.096，为少数股东损益。</p></div><div class="panel"><h3>现金转化的经营含义</h3><p>利润按本期收入和成本计算；现金流看钱什么时候收到、什么时候付出。收回以前的欠款、减少备货，都可能让现金流高于利润。本期经营现金净流入约为净利润的3倍，公司称去库存和收回垫款帮助了改善，所以不能把6,743万元全当成本期新赚的钱。</p><p class="cash-interpretation">从合并净利润2,261万元出发，已识别的税费、折旧、减值及财务等调整净增加722万元，再计入差额测算、实际收息和缴税，得到经营现金净流入6,743万元。<strong>差额测算4,021.4万元仅用于勾稽，不分配到库存、应收或应付。</strong> 逐项计算见<a href="#cash-method-note">计算口径</a>。</p><div class="callout"><strong>现金改善的经营含义：</strong> 经营现金净流入比净利润多4,482万元。公司披露去库存、收回垫款帮助了现金改善；后续重点看重新备货和客户回款后的现金表现。</div><p class="source-note">图示采用合并利润口径。经营现金净流入÷合并净利润＝67.426÷22.605＝2.98倍。公司把付息列在筹资活动；若也扣掉这笔利息，经营现金剩6,424万元。其他公司分类可能不同，比较前须统一。计算口径见<a href="#cash-method-note">附注</a>；基金汇率变化依据：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=33" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 33–34 页</a>。</p></div></div>
+<div class="panel cash-block" id="cash-sources-uses"><h3>收购和还债超过本期经营现金，差额用了过去存下的钱</h3>
 <p>经营带来6,743万元，扣去设备等购建约24万元、收购净支出4,685万元，只剩约2,033万元。偿还借款扣除新借入后，仍净支出7,809万元，还要支付利息和租赁款，因此需要动用原有现金。</p><p class="cash-interpretation"><strong>两项主要用途：收购净花4,685万元，净还借款7,809万元。</strong> 收购支付约1.23亿元，同时带入现金7,595万元；本期借入约1.08亿元、偿还约1.86亿元。实际付息319万元、租赁付款204万元及设备软件购建约24万元，也消耗了现金。现金余额的完整变化已在本节开头的瀑布图列示。</p>
 <div class="formula cash-formula">306.410 + 67.426 − 47.092 − 83.311 + 0.533 = 243.966</div>
 <p class="source-note">期末勾稽无差额。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=28" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 28 页</a>、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=12" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 12 页</a>、<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=45" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 45–47 页</a>。现金流表收购支付行含“net of cash acquired”字样，但另列并入现金；按表内总额及收购附注配对两行，避免再次净额扣减。</p>
 <div class="callout"><strong>现金减少的主要原因是收购和降债安排。</strong> 公司日常经营已净收到钱，但收购和净还借款用得更多。与此同时，借款余额也少了7,655万元，因此现金减少不能单独证明经营变差。下一步要判断这些安排之后，留下的钱能不能覆盖备货、供应商付款、工资和税费。</div>
 <p>6月末现金2.44亿元，借款1.56亿元，租赁负债约999万元。只扣这两类债务，现金还多约7,760万元；这不是已经扣完所有待付款后可随意花的钱。公司另有2.62亿元未使用的银行额度，但还没到账，能否动用要看条件。建议按实际到期日列未来13周的收款和付款，查看哪一周的钱最少。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=13" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 13、25–26、43 页</a>。</p>
 <p class="source-note">2025年末期股息于2026-07-17支付，属于下半年，未计入本期上半年现金支出；下一期现金安排应纳入这笔实际付款。来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=45" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 45 页</a>。</p></div>
-<div class="panel cash-block" id="cash-action-loop"><h3>四 · 接下来具体查什么、怎么做</h3><p>把财报里的变化变成具体检查：货有没有积压、钱有没有到账、担保能否解除、未来付款够不够。下列责任分工和数值观察线是分析建议，不是公司承诺。</p>
+<div class="panel cash-block" id="cash-action-loop"><h3>接下来具体查什么、怎么做</h3><p>把财报里的变化变成具体检查：货有没有积压、钱有没有到账、担保能否解除、未来付款够不够。下列责任分工和数值观察线是分析建议，不是公司承诺。</p>
 <div class="table-wrap"><table class="data-table cash-table cash-loop"><thead><tr><th>要解决的问题</th><th>已经知道什么</th><th>接下来怎么做</th><th>由谁跟、看什么结果</th></tr></thead><tbody><tr class="" data-evidence="inference"><td>减少库存后，会不会又压回去？</td><td>库存少6,713万元，其他应收款少3,403万元。公司称退出亏损渠道、加快收回垫款帮助了现金改善。</td><td>每月看卖掉了多少货、补了多少货、哪些货仍长期卖不动；核对垫款实际收回额。不能把余额减少全当成现金回收。</td><td>供应链、资金团队每月跟进。库存≤2.4亿元作为观察线，&gt;2.7亿元查原因；同时看库龄和经营现金是否回落。</td></tr><tr class="" data-evidence="inference"><td>卖货后，客户有没有及时付款？</td><td>销售应收比年初增49.0%，比去年6月末约增5.9%；公司披露的应收周转由29.3天升至32.1天，延长2.8天。</td><td>按客户核对发票、约定付款日和到账记录，优先核实京东期后回款。每年相同季节也做比较，区分备货旺季和实际拖款。</td><td>渠道、财务每周跟进。周转≤33天作为观察线，&gt;38天查原因；超过约定付款日的款项逐笔处理。</td></tr><tr class="" data-evidence="inference"><td>上海旭一欠款、担保能否解除？</td><td>应收款5,248万元，坏账准备4,980万元；公司另有4,750万元存款为其贷款担保。计提不等于已收钱。</td><td>还款和担保分开建表。核对合同、银行到账和解除担保条件；新增交易、追加担保须先核查风险。</td><td>资金、风控按合同节点跟进。核验10月、12月各200万元还款；未按时到账就升级处理，并跟踪银行担保状态。</td></tr><tr class="" data-evidence="inference"><td>买公司、还债后，未来够不够钱？</td><td>经营现金扣设备购建和收购净支出后，剩约2,033万元，低于净还借款7,809万元。</td><td>按周列未来13周收款、进货、还债、税费、整合和股息支出；不把受限资金或未到账授信当作现有现金。</td><td>资金、日本业务团队每周更新。如果某周钱不够，提前筹钱，并调整尚未承诺的新投入；到期债务仍按约支付。</td></tr></tbody></table></div>
 <p class="source-note">事实来源：<a data-source-file="财报源文件/优趣汇_2026H1_中期报告_20260928.pdf" href="https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800918.pdf#page=12" rel="noopener noreferrer" target="_blank">正式中报，PDF 第 12、15–16、28、49 页</a>。经营现金比利润高约3倍是本期结果，后续结合库存、回款与实际收支持续跟踪。</p></div>
 </div></section>
@@ -293,8 +274,8 @@ function cashStoryWaterfall(id, rows, residualIndex = -1) {
     bars.push({
       value: Math.abs(cashStoryMillion(row.amount)),
       itemStyle: residual
-        ? { color: '#edf0f1', borderColor: c.muted, borderWidth: 1.5, borderType: 'dashed', borderRadius: 2 }
-        : { color: row.total ? c.blue : row.amount >= 0 ? c.green : c.coral, borderRadius: 2 },
+        ? { color: '#edf0f1', borderColor: c.muted, borderWidth: 1.5, borderType: 'dashed', borderRadius: 3 }
+        : { color: row.total ? c.blue : row.amount >= 0 ? c.green : c.coral, borderRadius: 3 },
       label: { color: residual ? c.muted : c.ink }
     });
     running = row.total ? row.amount : running + row.amount;
@@ -316,7 +297,7 @@ function cashStoryWaterfall(id, rows, residualIndex = -1) {
       name: '百万元', nameLocation: 'middle', nameGap: 26,
       splitNumber: 3,
       axisLabel: { color: c.muted, fontSize: 10 },
-      splitLine: { show: true, lineStyle: { color: '#e7ece9', type: 'dashed' } }
+      splitLine: { show: true, lineStyle: { color: '#e7ece9', type: 'solid' } }
     },
     yAxis: {
       ...common.yAxis,
@@ -354,7 +335,7 @@ function cashStoryWaterfall(id, rows, residualIndex = -1) {
         barMaxWidth: 26,
         label: {
           show: true, position: 'right', distance: 6,
-          fontSize: 11, fontWeight: 600,
+          fontSize: 11,
           formatter: point => {
             const row = rows[point.dataIndex];
             return row.total ? cashStoryStock(row.amount, 2) : cashStorySigned(row.amount, 2);
@@ -391,7 +372,7 @@ mount('chart-capital-balances', {
     name: '百万元', nameLocation: 'middle', nameGap: 26,
     splitNumber: 3,
     axisLabel: { color: c.muted, fontSize: 10 },
-    splitLine: { show: true, lineStyle: { color: '#e7ece9', type: 'dashed' } }
+    splitLine: { show: true, lineStyle: { color: '#e7ece9', type: 'solid' } }
   },
   yAxis: {
     ...common.yAxis,
@@ -416,7 +397,7 @@ mount('chart-capital-balances', {
     name: period.name,
     type: 'bar', barMaxWidth: 24, barGap: '35%',
     data: cashStoryBalanceKeys.map(key => cashStoryMillion(cashStoryLedger.balance_pairs_current_prior[key][period.pairIndex])),
-    itemStyle: { color: period.color, borderRadius: [0, 3, 3, 0] },
+    itemStyle: { color: period.color, borderRadius: [0, 4, 4, 0] },
     label: { show: true, position: 'right', distance: 5, color: c.ink, fontSize: 11, formatter: point => Number(point.value).toFixed(1) },
     emphasis: { focus: 'series' }
   }))
@@ -433,7 +414,7 @@ mount('chart-receivables-days', {
     type: 'value', min: 0, max: 40, interval: 10,
     name: '天', nameLocation: 'middle', nameGap: 23,
     axisLabel: { color: c.muted, fontSize: 10 },
-    splitLine: { show: true, lineStyle: { color: '#e7ece9', type: 'dashed' } }
+    splitLine: { show: true, lineStyle: { color: '#e7ece9', type: 'solid' } }
   },
   yAxis: {
     ...common.yAxis,
@@ -450,8 +431,8 @@ mount('chart-receivables-days', {
       { value: 29.3, itemStyle: { color: '#b7c0bc' } },
       { value: 32.1, itemStyle: { color: c.coral } }
     ],
-    itemStyle: { borderRadius: [0, 3, 3, 0] },
-    label: { show: true, position: 'right', distance: 6, fontSize: 12, fontWeight: 600, color: c.ink, formatter: point => Number(point.value).toFixed(1) + '天' },
+    itemStyle: { borderRadius: [0, 4, 4, 0] },
+    label: { show: true, position: 'right', distance: 6, fontSize: 12, color: c.ink, formatter: point => Number(point.value).toFixed(1) + '天' },
     emphasis: { disabled: true }
   }]
 });
