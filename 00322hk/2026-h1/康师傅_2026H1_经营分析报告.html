@@ -256,7 +256,34 @@ html body .turnover-comparison table th:nth-child(1),html body .turnover-compari
 @media print{@page{size:A4 portrait;margin:12mm 10mm}.band,.band:not(#summary),.analysis-notes,#notes,footer{break-before:auto!important;page-break-before:auto!important}.band{padding:12px 0!important;margin:0!important}.hero{break-after:page!important}.section-head{break-after:avoid-page!important;margin-bottom:12px!important}.section-head h2{font-size:20px!important}.grid-2,.grid-even,.story-row{display:block!important;break-inside:auto!important}.grid-2>.panel,.story-row>.panel{margin:0 0 12px!important;break-inside:avoid-page!important;min-height:0!important;height:auto!important}.panel{padding:14px!important}.panel h3{font-size:15px!important}.panel p{font-size:11px!important;line-height:1.6!important;orphans:2;widows:2}.chart{height:220px!important;min-height:0!important}.cash-wide .chart{height:245px!important}[data-vertical-waterfall-panel="true"]{break-inside:avoid-page!important}[data-vertical-waterfall="true"]{height:72mm!important;min-height:72mm!important;max-height:72mm!important}.cash-metric-sync,.turnover-comparison{width:100%!important;max-width:none!important;margin:12px 0!important;break-inside:auto!important;page-break-inside:auto!important}.cash-metric-sync h3,.turnover-comparison h3{break-after:avoid-page!important}.cash-metric-sync .table-wrap,.turnover-comparison .table-wrap{overflow:visible!important}.cash-metric-sync table,.turnover-comparison table{min-width:0!important;table-layout:fixed!important;width:100%!important;font-size:10px!important;line-height:1.5!important}.cash-metric-sync th,.cash-metric-sync td,.turnover-comparison th,.turnover-comparison td{padding:7px 6px!important;font-size:10px!important}.turnover-comparison small{font-size:8px!important}.turnover-comparison .turnover-reading{font-size:10px!important;padding:9px!important;break-inside:avoid-page!important}.cash-metric-sync .source-note,.turnover-comparison .source-note{font-size:9px!important;line-height:1.5!important}.cash-metric-sync tr,.turnover-comparison tr{break-inside:avoid-page!important}thead{display:table-header-group!important}footer{height:auto!important;min-height:0!important;padding:20px 0!important}.report-tooltip{display:none!important}}
 @media print{html body .grid-2,html body .grid-even{display:grid!important;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)!important;gap:12px!important;align-items:start!important;break-inside:auto!important}html body .grid-2>.panel{margin:0 0 12px!important;min-width:0!important}html body [data-vertical-waterfall-panel="true"]{grid-column:1 / -1!important}html body .grid-2:has([data-vertical-waterfall-panel="true"]){display:block!important}html body #notes .grid-2{display:block!important}}
 @media print{html body footer{break-before:auto!important;page-break-before:auto!important;break-inside:avoid-page!important;padding:12px 0!important}html body footer .footer-grid{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)!important;gap:16px!important}html body footer .footer-title{font-size:16px!important}html body footer p,html body footer a,html body footer .footer-meta{font-size:9px!important;line-height:1.5!important}html body .source-note{margin-top:6px!important;margin-bottom:0!important}}
-</style><meta content="20261024-comparative-turnover-flow" name="report-layout-revision"/><meta content="20261024-alignment-restored" name="report-alignment-revision"/></head><body><header class="hero" data-cover-tone="light"><div aria-hidden="true" class="cover-lines"><svg viewbox="0 0 550 430" xmlns="http://www.w3.org/2000/svg"><path d="M-70 330 C130 380 310 100 580 150"></path><path d="M-70 380 C130 430 310 150 580 200"></path><path d="M-70 430 C130 480 310 200 580 250"></path></svg></div>
+</style><meta content="20261024-comparative-turnover-flow" name="report-layout-revision"/><meta content="20261024-alignment-restored" name="report-alignment-revision"/><style id="brand-visual-template" data-template="00322hk/2025">
+:root{
+ --brand-primary:#b52c30;--brand-secondary:#4b946d;
+ --ink:#172026;--muted:#66737b;--line:#dce2e4;--soft:#f3f6f5;
+}
+body>.hero{
+ background:linear-gradient(110deg,#fff 8%,#fffaf4 68%,#f4f7f1 100%);
+ border-bottom-color:var(--brand-secondary);
+}
+.hero .cover-art{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero .cover-art i{
+ position:absolute;width:540px;height:540px;border:32px solid #b52c3009;
+ border-radius:50%;right:-225px;top:-220px;transform:rotate(-12deg);
+}
+.hero .cover-art i:nth-child(2){width:380px;height:380px;border:1px solid #4b946d25;right:-94px;top:-95px}
+.hero .cover-art i:nth-child(3){width:230px;height:230px;border:18px solid #d6b25c0b;right:-40px;top:-15px}
+@media screen and (min-width:1021px){
+ body>.hero .hero-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr)}
+}
+@media screen and (max-width:1020px){
+ body>.hero .hero-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media screen and (max-width:620px){
+ .hero .cover-art i{right:-360px;top:-300px}
+ .hero .cover-art i:nth-child(2){right:-265px;top:-210px}
+ .hero .cover-art i:nth-child(3){display:none}
+}
+</style></head><body><header class="hero" data-cover-tone="light"><div aria-hidden="true" class="cover-art"><i></i><i></i><i></i></div>
 <div class="container hero-grid">
 <div>
 <div class="eyebrow">经营分析 · 2026 中期复盘</div>
@@ -395,7 +422,7 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
 </script><script>
 window.REPORT_READY=false;document.documentElement.dataset.reportReady='false';
 document.documentElement.dataset.local=String(location.protocol==='file:');
-const DATA={"overview": {"names": ["收入", "毛利", "经营利润\n（派生）", "归母净利"], "previous": [400.92163, 138.15035, 37.1752, 22.71116], "current": [405.44565, 145.07101, 39.96391, 24.33042]}, "growth": {"names": ["茶饮", "方便面", "其他", "包装水", "果汁", "碳酸及其他"], "values": [9.7, 2.67385, 0.02692, -1.18, -3.84, -2.86]}, "bridge": {"names": ["上期归母", "毛利", "分销成本", "行政费用", "其他收益", "其他净收入", "其他经营费用", "财务费用", "联营合营", "所得税", "少数股东", "本期归母"], "start": 22.71116, "end": 24.33042, "values": [6.92066, -1.2211, -0.95587, 0.01279, -2.08231, 0.11454, 0.03987, 0.10707, -0.92113, -0.39526]}, "segments": {"names": ["方便面", "饮品", "其他"], "revenues": [137.3275, 265.4087, 2.70945], "margins": [30.337696382734702, 38.37018153511924, 57.98962889147244], "shares": [28.718349724042042, 70.1985875744575, 1.083055808324489]}, "cash": {"names": ["期初现金", "经营净现金", "投资净现金", "筹资净现金", "汇率", "期末现金"], "start": 80.31956, "end": 113.15028, "values": [33.37215, -16.74977, 16.316, -0.10766]}},REPORT_CHARTS={};const BRAND='#b3222d',NEG='#a85161',GRAY='#b7c0bc';
+const DATA={"overview": {"names": ["收入", "毛利", "经营利润\n（派生）", "归母净利"], "previous": [400.92163, 138.15035, 37.1752, 22.71116], "current": [405.44565, 145.07101, 39.96391, 24.33042]}, "growth": {"names": ["茶饮", "方便面", "其他", "包装水", "果汁", "碳酸及其他"], "values": [9.7, 2.67385, 0.02692, -1.18, -3.84, -2.86]}, "bridge": {"names": ["上期归母", "毛利", "分销成本", "行政费用", "其他收益", "其他净收入", "其他经营费用", "财务费用", "联营合营", "所得税", "少数股东", "本期归母"], "start": 22.71116, "end": 24.33042, "values": [6.92066, -1.2211, -0.95587, 0.01279, -2.08231, 0.11454, 0.03987, 0.10707, -0.92113, -0.39526]}, "segments": {"names": ["方便面", "饮品", "其他"], "revenues": [137.3275, 265.4087, 2.70945], "margins": [30.337696382734702, 38.37018153511924, 57.98962889147244], "shares": [28.718349724042042, 70.1985875744575, 1.083055808324489]}, "cash": {"names": ["期初现金", "经营净现金", "投资净现金", "筹资净现金", "汇率", "期末现金"], "start": 80.31956, "end": 113.15028, "values": [33.37215, -16.74977, 16.316, -0.10766]}},REPORT_CHARTS={};const BRAND='#b52c30',NEG='#a85161',GRAY='#b7c0bc';
 const base={animation:false,textStyle:{fontFamily:'Microsoft YaHei, PingFang SC, Arial, sans-serif',color:'#202f43',fontSize:12},tooltip:{trigger:'axis',confine:true,valueFormatter:value=>Number(value).toFixed(2),backgroundColor:'#202f43',textStyle:{color:'#fff'}},legend:{top:0,itemWidth:14,itemHeight:10},grid:{left:54,right:24,top:44,bottom:52,containLabel:true}};
 function make(id,opt){const el=document.getElementById('chart-'+id);REPORT_CHARTS[id]=echarts.init(el,null,{renderer:'canvas'});REPORT_CHARTS[id].setOption({...base,...opt});}
 const money={type:'value',name:'亿元',splitLine:{lineStyle:{color:'#edf0f3'}},axisTick:{show:false},axisLine:{show:false}};
